@@ -74,7 +74,7 @@ function keyClicked(e) {
     if (clicked.textContent === "Backspace") { backSpc() }
     else if (clicked.textContent === "Tab") { textField.textContent += '    ' }
     else if (clicked.textContent === " SPACE ") { textField.textContent += ' ' }
-    else if (clicked.textContent === "Del" || clicked.textContent === "Alt" || clicked.textContent === "Ctrl") { }
+    else if (clicked.textContent === "Del" || clicked.textContent === "Alt" || clicked.textContent === "Ctrl" || clicked.textContent === "Shift") { }
     else if (clicked.textContent === "Enter") { textField.textContent+= '' ; }
     else if (clicked.textContent === "CapsLock") { 
             if (capsStatus) {capsStatus = false}
@@ -92,7 +92,7 @@ function logKey(e) {
     if (e.key === "Backspace") { backSpc() }
     else if (e.key === "Tab") { e.preventDefault(); textField.textContent += '    ' }
     else if (e.key === "SPACE") { e.preventDefault(); textField.textContent += ' ' }
-    else if (e.key === "Del" || e.key === "Alt" || e.key === "Ctrl") { }
+    else if (e.key === "Del" || e.key === "Alt" || e.key === "Ctrl" || e.key === "Shift") { }
     else if (e.key === "CapsLock") { if (capsStatus) { capsStatus = false} else capsStatus = true;  }
     else if (e.key === "Enter") {}
 
