@@ -1,6 +1,7 @@
 let lang = 'eng';
 let capsStatus = false;
 
+
 let  audio = new Audio();
 audio.preload = 'auto';
 audio.src = './soundkey.mp3';
@@ -92,7 +93,9 @@ function logKey(e) {
     if (e.key === "Backspace") { backSpc() }
     else if (e.key === "Tab") { e.preventDefault(); textField.textContent += '    ' }
     else if (e.key === "SPACE") { e.preventDefault(); textField.textContent += ' ' }
-    else if (e.key === "Del" || e.key === "Alt" || e.key === "Ctrl" || e.key === "Shift") { }
+    else if (e.key === "Del" || e.key === "Alt" || e.key === "Control" || e.key === "Shift") { }
+    else if (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "ArrowUp" || e.key === "ArrowDown") { }
+    
     else if (e.key === "CapsLock") { if (capsStatus) { capsStatus = false} else capsStatus = true;  }
     else if (e.key === "Enter") {}
 
@@ -101,12 +104,10 @@ function logKey(e) {
     const keyFind = document.querySelectorAll('.key');
     keyFind.forEach(key => {
         if (key.textContent == e.key) {
-            console.log(key.className);
-         //   key.backgroundColor('');
+            key.style.backgroundColor = '#b83030';
+            setTimeout(function () {key.style.backgroundColor = '#404040';}, 200);
         }
-
-    })
-
+    })    
     }
 
 
