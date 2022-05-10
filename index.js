@@ -24,7 +24,7 @@ const keylist = [
                 ['Tab', 'q','w','e','r','t','y','u','i','o','p','[',']','`\`','Del'],
                 ['CapsLock','a','s','d','f','g','h','j','k','l',`;`,`'`,'Enter'],
                 ['Shift','z','x','c','v','b','n','m',`,`,'.','/','↑','Shift'],
-                ['Ctrl', 'Win', 'Alt', ' SPACE ', 'Alt', '←', '↓','→','Ctrl']
+                ['Control', 'Win', 'Alt', ' SPACE ', 'Alt', '←', '↓','→','Control']
                 ];
                    
                 
@@ -75,7 +75,7 @@ function keyClicked(e) {
     if (clicked.textContent === "Backspace") { backSpc() }
     else if (clicked.textContent === "Tab") { textField.textContent += '    ' }
     else if (clicked.textContent === " SPACE ") { textField.textContent += ' ' }
-    else if (clicked.textContent === "Del" || clicked.textContent === "Alt" || clicked.textContent === "Ctrl" || clicked.textContent === "Shift") { }
+    else if (clicked.textContent === "Del" || clicked.textContent === "Alt" || clicked.textContent === "Control" || clicked.textContent === "Shift") { }
     else if (clicked.textContent === "Enter") { textField.textContent+= '' ; }
     else if (clicked.textContent === "CapsLock") { 
             if (capsStatus) {capsStatus = false}
@@ -103,7 +103,7 @@ function logKey(e) {
 
     const keyFind = document.querySelectorAll('.key');
     keyFind.forEach(key => {
-        if (key.textContent == e.key) {
+        if (key.textContent.toUpperCase() == e.key.toUpperCase()) {
             key.style.backgroundColor = '#b83030';
             setTimeout(function () {key.style.backgroundColor = '#404040';}, 200);
         }
